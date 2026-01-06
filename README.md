@@ -76,9 +76,10 @@ To investigate the age distribution of the patients in this study, a histogram c
 p <- ggplot(data = cholera, aes(x = AGE)) + geom_histogram(binwidth = 2, fill = "#69b3a2") + ggtitle(" Age Distribution of Zambian Cholera Patients") + xlab(" Age of Patients, years") + ylab ("Number of Patients") + theme(plot.title = element_text(hjust = 0.5))
 p
 ```
-Age Histogram: <br/>
-<imr src="https://imgur.com/GrWY3ut">
-<br/>
+Age Histogram:
+
+<img width="1123" height="744" alt="image" src="https://github.com/user-attachments/assets/7ac6d604-767d-4d37-a015-d29b0a8e37d1" />
+
 
 Most of the patients in this study are around 30-60 years of age.
 
@@ -107,6 +108,9 @@ p3 <- ggplot(data = cholera, aes(x = VAC.f, fill = VAC.f)) + geom_bar() + ggtitl
 p3 + scale_fill_discrete(name = " Vaccination Dose")
 
 ```
+
+<img width="1032" height="729" alt="image" src="https://github.com/user-attachments/assets/9ef3558c-acce-4ffd-989e-911ab1498956" />
+
 From this graph, it is clear that more patients in this study received a two-dose vaccination regimen compared to the one-dose vaccination regimen. However, it is hard to determine the exact number of patients for each regime from this graph.
 
 
@@ -132,6 +136,8 @@ p3 + scale_fill_manual(values=c("lightblue2", "coral3"))
 p3 + scale_fill_discrete(name = " ER status ")
 
 ```
+<img width="1026" height="720" alt="image" src="https://github.com/user-attachments/assets/5d8064f5-c2eb-4613-9fea-dcb9fbfafcf8" />
+
 
 We can see that more patients were not admitted to the ER for severe cholera.
 
@@ -185,6 +191,9 @@ p4 + scale_color_manual(values = c("chocolate3", "cadetblue1"))
 p4 + theme(legend.position = "none")
   
 ```
+<img width="1043" height="730" alt="image" src="https://github.com/user-attachments/assets/baf4884a-984a-453b-bfbf-3db9742b8f83" />
+
+
 It seems that receiving 2 doses protects young people from being admitted for severe cholera compared to older people. However, across all ages, the 2-dose vaccination leads to more patients avoiding emergency care for cholera.
 
 ##Statistical Analysis
@@ -232,6 +241,9 @@ fisher.test(ERVAC_table)
 ```{r}
 exp(-3.47903)
 ```
+<img width="935" height="47" alt="image" src="https://github.com/user-attachments/assets/5005a530-fab8-4c5c-90c6-9e7bc8d05fb3" />
+
+
 The odds ratio is 0.031, which is less than 1.
 Before we interpret this value, we should note that vaccination status is a protective factor, and its odds ratio tends to be less than 1.
 To make the odds ratio and its interpretation more practical, we can take the reciprocal.
@@ -241,6 +253,8 @@ To make the odds ratio and its interpretation more practical, we can take the re
 1/0.03083731
 
 ```
+<img width="1366" height="67" alt="image" src="https://github.com/user-attachments/assets/8f998d97-48f6-43cd-ac4b-4d3d2f672488" />
+
 As a result of taking the reciprocal, the correct interpretation of the odds ratio is :
 
 Patients that received the one-dose cholera vaccine are 32 times more likely to be admitted to the ER compared to those with the two-dose cholera vaccine.
