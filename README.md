@@ -76,7 +76,7 @@ To investigate the age distribution of the patients in this study, a histogram c
 p <- ggplot(data = cholera, aes(x = AGE)) + geom_histogram(binwidth = 2, fill = "#69b3a2") + ggtitle(" Age Distribution of Zambian Cholera Patients") + xlab(" Age of Patients, years") + ylab ("Number of Patients") + theme(plot.title = element_text(hjust = 0.5))
 p
 ```
-<br/>
+Age Histogram: <br/>
 <imr src="https://imgur.com/GrWY3ut">
 <br/>
 
